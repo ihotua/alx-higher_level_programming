@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-last_digit = abs(number) % 10
+l_dig = abs(number) % 10
 if number < 0:
     l_dig = -l_dig
 
@@ -10,4 +10,4 @@ if l_dig > 5:
 elif l_dig == 0:
     print("Last digit of {} is {} and is 0".format(number, l_dig))
 else:
-    print("Last digit of {} is {} and is less than 6 and not 0".format(number,l_dig))
+    print("Last digit of {} is {} and is less than 6 and not 0".format(number, l_dig))
