@@ -7,7 +7,7 @@ if number >= 0:
 else:
     last_digit = number % -10
 
-print("Last digit of", number, end=" ")
+print("Last digit of {} is {} and is ".format(number, digit), end="")
 
 if last_digit > 5:
     print("is greater than 5")
