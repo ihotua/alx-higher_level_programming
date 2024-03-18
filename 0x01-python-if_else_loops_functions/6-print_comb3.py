@@ -4,4 +4,4 @@ for f in range(10):
         if f != 9 or g != 8:
             print("{}{}".format(f, g), end=", ")
         else:
-            print("\n")
+            print()
