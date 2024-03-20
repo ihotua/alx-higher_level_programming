@@ -12,6 +12,4 @@ if __name__ == "__main__":
         print("1 argument:")
     else:
         print("{} arguments:".format(i))
-
-    for j, value in enumerate(arg, start=1):
-        print("{}: {}".format(j, value))
+        print("{}: {}".format(i, arg[1]))
