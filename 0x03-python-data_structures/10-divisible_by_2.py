@@ -2,8 +2,8 @@
 def divisible_by_2(my_list=[]):
     ihotu = []
     for num in range(len(ihotu)):
-        if ihotu[num] % 2 == 0:
-            ihotu[num] = True
+        if ihotu[i] % 2 == 0:
+            ihotu.append(True)
         else:
-            ihotu[num] = False
+            ihotu.append(False)
     return (ihotu)
