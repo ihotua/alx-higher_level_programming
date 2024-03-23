@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
-    ihotu = []
-    for i in range(len(ihotu)):
-        if ihotu[i] % 2 == 0:
-            ihotu.append(True)
+    result = my_list[:]
+    for i in range(len(result)):
+        if result[i] % 2 == 0:
+            result[i] = True
         else:
-            ihotu.append(False)
-    return (ihotu)
+            result[i] = False
+    return (reuslt)
