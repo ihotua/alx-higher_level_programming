@@ -31,42 +31,49 @@ listint_t *reverse_listint(listint_t **head)
 
 int is_palindrome(listint_t **head)
 {
-    listint_t *slow_ptr = *head, *fast_ptr = *head;
-    listint_t *second_half, *prev_of_slow_ptr = *head;
-    listint_t *midnode = NULL;
+    listint_t *slow = *head, *fast = *head;
+    listint_t *prev_slow = *head, *second_half = NULL;
+    listint_t *midnode = NULL, *tmp = *head;
     int res = 1;
 
-    if (*head != NULL && (*head)->next != NULL)
+    if (*head == NULL || (*head)->next == NULL)
+        return 1;
+
+    while (fast != NULL && fast->next != NULL)
     {
-        while (fast_ptr != NULL && fast_ptr->next != NULL)
-        {
-            fast_ptr = fast_ptr->next->next;
-            prev_of_slow_ptr = slow_ptr;
-            slow_ptr = slow_ptr->next;
-        }
-
-        if (fast_ptr != NULL)
-        {
-            midnode = slow_ptr;
-            slow_ptr = slow_ptr->next;
-        }
-
-        second_half = slow_ptr;
-        prev_of_slow_ptr->next = NULL;
-
-        reverse_listint(&second_half);
-
-        res = compare_lists(*head, second_half);
-
-        reverse_listint(&second_half);
-
-        if (midnode != NULL)
-        {
-            prev_of_slow_ptr->next = midnode;
-            midnode->next = second_half;
-        }
-        else
-            prev_of_slow_ptr->next = second_half;
+        fast = fast->next->next;
+        prev_slow = slow;
+        slow = slow->next;
     }
+
+    if (fast != NULL)
+    {
+        midnode = slow;
+        slow = slow->next;
+    }
+
+    second_half = reverse_listint(&slow);
+
+    while (second_half != NULL)
+    {
+        if (tmp->n != second_half->n)
+        {
+            res = 0;
+            break;
+        }
+        tmp = tmp->next;
+        second_half = second_half->next;
+    }
+
+    reverse_listint(&slow);
+
+    if (midnode != NULL)
+    {
+        prev_slow->next = midnode;
+        midnode->next = slow;
+    }
+    else
+        prev_slow->next = slow;
+
     return res;
 }
