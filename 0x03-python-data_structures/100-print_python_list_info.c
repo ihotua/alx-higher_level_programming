@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Python.h>
+#include <stddef.h>
 
 /**
  * print_python_list_info - Prints basic info about a Python List instance
