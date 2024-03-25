@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Python.h>
+#include <Python.h>
 
 /**
  * print_python_list_info - Prints basic info about a Python List instance
@@ -10,17 +11,28 @@
 
 void print_python_list_info(PyObject *p)
 {
-    long int size, i;
-    PyObject *item;
+    PyObject *obj;
+    PyListObject *list;
+    int i, allocated, size;
+    char *c_type;
 
-    size = PyList_Size(p);
-    printf("[*] Size of the Python List = %ld\n", size);
+    if (!PyList_Check(p))
+    {
+        printf("[*] Not a Python List\n");
+        return;
+    }
 
-    printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
+    list = (PyListObject *)p;
+    allocated = list->allocated;
+    size = list->size;
+
+    printf("[*] Size of the Python List = %d\n", size);
+    printf("[*] Allocated = %d\n", allocated);
 
     for (i = 0; i < size; i++)
     {
-        item = PyList_GetItem(p, i);
-        printf("Element %ld: %s\n", i, Py_TYPE(item)->tp_name);
+        obj = PyList_GetItem(list, i);
+        c_type = Py_TYPE(obj)->tp_name;
+        printf("[*] Element %d: %s\n", i, c_type);
     }
 }
