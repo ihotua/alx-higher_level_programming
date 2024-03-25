@@ -3,14 +3,14 @@
 
 /**
  * print_python_list_info - Prints basic info about a Python List instance
+ * 
  * @p: A Python List object
- *
- * Return: no return
+ * * Return: no return
  */
 
 void print_python_list_info(PyObject *p)
 {
-    Py_ssize_t size, i;
+    long int size, i;
     PyObject *item;
 
     size = PyList_Size(p);
