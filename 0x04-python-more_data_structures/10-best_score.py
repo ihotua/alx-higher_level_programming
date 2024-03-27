@@ -4,7 +4,7 @@ def best_score(a_dictionary):
     alexa = float('-inf')
 
     for k, v in a_dictionary.items():
-        if v > ihotu_score:
+        if v > alexa:
             alexa = v
             ihotu = k
 
