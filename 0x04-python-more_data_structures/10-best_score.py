@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    ihotu = None
-    alexa = float('-inf')
+    best_key = None
+    best_score = float('-inf')
 
     for k, v in a_dictionary.items():
-        if v > alexa:
-            alexa = v
-            ihotu = k
+        if v > best_score:
+           best_score = v
+           best_key = k
 
-    return (ihotu)
+    return (best_key)
