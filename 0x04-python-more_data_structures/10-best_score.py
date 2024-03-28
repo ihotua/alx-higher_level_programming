@@ -4,7 +4,7 @@ def best_score(a_dictionary):
         return None
     
     ihotu_key = next(iter(a_dictionary))
-    ihotu_value = a_dictionary[best_key]
+    alexa_value = a_dictionary[ihotu_key]
 
     for key, value in a_dictionary.items():
         if value > alexa_value:
