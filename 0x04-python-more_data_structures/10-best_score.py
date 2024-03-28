@@ -2,7 +2,7 @@
 def best_score(a_dictionary):
     if not a_dictionary:
         return None
-    
+
     ihotu_key = next(iter(a_dictionary))
     alexa_value = a_dictionary[ihotu_key]
 
