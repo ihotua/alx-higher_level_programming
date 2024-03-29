@@ -2,34 +2,24 @@
 
 void print_python_bytes(PyObject *p)
 {
-    PyBytesObject *bytes_obj;
-    Py_ssize_t size, i;
-    char *bytes_str;
-
-    if (!PyBytes_Check(p)) 
+    if (!p || !PyBytes_Check(p))
     {
         printf("[ERROR] Invalid Bytes Object\n");
         return;
     }
 
-    bytes_obj = (PyBytesObject *)p;
-    size = PyBytes_GET_SIZE(bytes_obj);
-
     printf("[.] bytes object info\n");
-    printf("  - Length: %ld\n", size);
+    printf("  - Length: %ld\n", ((PyVarObject *)p)->ob_size);
 
-    bytes_str = PyBytes_AsString(p);
-
-    if (size > 10)
-        size = 10;
-
-    printf("  - First %ld bytes: ", size);
-    for (i = 0; i < size; i++) 
+    printf("  - First 10 bytes: ");
+    char *bytes = ((PyBytesObject *)p)->ob_sval;
+    Py_ssize_t size = ((PyVarObject *)p)->ob_size;
+    for (Py_ssize_t i = 0; i < 10 && i < size; i++)
     {
-        printf("%02x", (unsigned char)bytes_str[i]);
-        if (i != size - 1)
+        printf("%02x", (unsigned char)bytes[i]);
+        if (i < 9 && i + 1 < size)
             printf(" ");
-        else
-            printf("\n");
     }
+    printf("\n");
 }
+
