@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Square class"""
+
 
 class Square:
     """
-    Definess Properties of a square.
+    An empty class representing a Square
     """
     pass
