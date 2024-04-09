@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Empty class Rectangle that defines a Rectangle
-"""
+"""Empty class Rectangle that defines a Rectangle"""
 
 class Rectangle:
     """
@@ -48,4 +46,5 @@ class Rectangle:
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = value
