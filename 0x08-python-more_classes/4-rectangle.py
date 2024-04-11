@@ -73,8 +73,8 @@ class Rectangle:
         else:
             return ('\n'.join(['#' * self.width] * self.height))
 
-        def __repr__(self):
+    def __repr__(self):
         """
         Return string representation of the rectangle
         """
-        return ("Rectangle({:d}, {:d})".format(self.width, self.height))
+        return ("Rectangle({}, {})".format(self.width, self.height))
