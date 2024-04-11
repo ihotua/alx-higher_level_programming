@@ -72,4 +72,3 @@ class Rectangle:
             return ""
         else:
             return ('\n'.join(['#' * self.width] * self.height))
-
