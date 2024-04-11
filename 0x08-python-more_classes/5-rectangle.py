@@ -78,7 +78,7 @@ class Rectangle:
         Return string representation of the rectangle
         """
         return ("Rectangle({}, {})".format(self.width, self.height))
-    
+
     def __del__(self):
         """
         Deletes an instance of a class
