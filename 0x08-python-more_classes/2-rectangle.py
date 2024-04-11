@@ -61,5 +61,5 @@ class Rectangle:
         """
         Retrieve perimeter
         """
-        return (2 * (self.width + self.height) 
+        return (2 * (self.width + self.height)
                 if self.width != 0 and self.height != 0 else 0)
