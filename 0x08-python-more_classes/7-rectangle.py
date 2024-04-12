@@ -1,6 +1,3 @@
-#!/usr/bin/python3
-"""Empty class Rectangle that defines a Rectangle"""
-
 class Rectangle:
     """Class representing a rectangle"""
     number_of_instances = 0
@@ -15,7 +12,7 @@ class Rectangle:
     @property
     def width(self):
         """Retrieve the width"""
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -30,7 +27,7 @@ class Rectangle:
     @property
     def height(self):
         """Retrieve the height"""
-        return self.__height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -44,22 +41,24 @@ class Rectangle:
 
     def area(self):
         """Retrieve area"""
-        return self.width * self.height
+        return (self.width * self.height)
 
     def perimeter(self):
         """Retrieve perimeter"""
-        return (2 * (self.width + self.height) if self.width != 0 and self.height != 0 else 0)
+        return ((2 * (self.width + self.height)
+                if self.width != 0 and self.height != 0 else 0))
 
     def __str__(self):
-        """Return the rectangle with the character #"""
+        """Return the rectangle with the character specified in print_symbol"""
         if self.width == 0 or self.height == 0:
-            return ""
+            return ("")
         else:
-            return '\n'.join(['#' * self.width] * self.height)
+            return ('\n'.join([str(self.print_symbol)
+                    * self.width] * self.height))
 
     def __repr__(self):
         """Return string representation of the rectangle"""
-        return "Rectangle({}, {})".format(self.width, self.height)
+        return ("Rectangle({}, {})".format(self.width, self.height))
 
     def __del__(self):
         """Deletes an instance of a class"""
