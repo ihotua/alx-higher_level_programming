@@ -82,6 +82,6 @@ class Rectangle:
             return (rect_2)
 
     @classmethod
-    """Creates a square instance of Rectangle"""
     def square(cls, size=0):
-        return cls(size, size)
+    """Creates a square instance of Rectangle"""
+        return (cls(size, size))
