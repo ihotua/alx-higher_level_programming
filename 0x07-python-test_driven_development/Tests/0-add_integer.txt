@@ -1,0 +1,77 @@
+The ``0-add_integer`` function
+=============================
+
+This module defines the ``add_integer`` function, which takes one or two integer arguments and returns their sum.
+
+Usage
+-----
+First, import the ``add_integer`` function:
+
+    >>> from add_integer import add_integer
+
+Basic usage:
+    
+    >>> add_integer(1, 2)
+    3
+
+Test with a single integer argument:
+
+    >>> add_integer(5)
+    5
+
+Test with a single integer argument and a default second argument:
+
+    >>> add_integer(10)
+    20
+
+Addition with positive and negative integers:
+
+    >>> add_integer(3, -5)
+    -2
+
+Addition with negative and positive integers:
+
+    >>> add_integer(-8, 4)
+    -4
+
+Addition over multiple values:
+
+    >>> [add_integer(i, i * 2) for i in range(4)]
+    [0, 3, 6, 9]
+
+Addition with a float and a negative integer:
+
+    >>> add_integer(10.5, -2)
+    8
+
+Addition with two floats:
+
+    >>> add_integer(2.5, 3.5)
+    6
+
+Addition with a string argument:
+
+    >>> add_integer(4, "hello")
+    Traceback (most recent call last):
+        ...
+    TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+Addition with a list argument:
+
+    >>> add_integer([1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: unsupported operand type(s) for +: 'int' and 'list'
+
+Addition with a dictionary argument:
+
+    >>> add_integer({1: 'one', 2: 'two'})
+    Traceback (most recent call last):
+        ...
+    TypeError: unsupported operand type(s) for +: 'int' and 'dict'
+
+"""
+
+def add_integer(a, b=10):
+    """Adds two integers and returns their sum."""
+    return int(a) + int(b)
