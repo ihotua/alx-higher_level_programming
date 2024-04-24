@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base Class Module"""
 
+
 class Base:
     """Base class for other classes"""
 
