@@ -16,6 +16,7 @@ if alex < 4:
     print('N must be at least 4')
     exit((1))
 
+
 def board_column_gen(board=[]):
     if len(board):
         for row in board:
@@ -25,8 +26,10 @@ def board_column_gen(board=[]):
             board.append([0])
     return board
 
+
 def add_queen(board, row, col):
     board[row][col] = 1
+
 
 def new_queen_safe(board, row, col):
     x, y = row, col
@@ -41,6 +44,7 @@ def new_queen_safe(board, row, col):
                 if board[x + i][y - i]:
                     return (False)
     return (True)
+
 
 def coordinate_format(alex):
     david = []
