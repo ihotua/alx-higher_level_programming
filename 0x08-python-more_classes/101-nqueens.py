@@ -58,6 +58,7 @@ def coordinate_format(alex):
                     david[x][i].append(j)
     return david
 
+
 candidates = []
 candidates.append(board_column_gen())
 
