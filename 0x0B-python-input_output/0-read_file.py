@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""")x)B. Python - Input/Output,Task O. Read file"""
 
 def read_file(filename=""):
     """ function that reads a text file and prints it to stdout """
