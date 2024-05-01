@@ -3,7 +3,8 @@
 0x0B. Python - Input/Output, task 11. Student to disk and reload
 """
 
-class Student:  
+
+class Student: 
     """Simple class containing student data."""
 
     def __init__(self, first_name, last_name, age):
