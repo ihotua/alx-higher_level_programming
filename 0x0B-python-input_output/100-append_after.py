@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """0x0B. Python - Input/Output, task 13. Search and update"""
 
 
