@@ -4,23 +4,31 @@
 
 import sys
 
+
 def print_metrics(total_size, status_counts):
     """Print metrics to the console"""
     print("File size:", total_size)
     for status_code, count in sorted(status_counts.items()):
         print(f"{status_code}: {count}")
 
+
 def parse_line(line):
     """Parse a log line and return file size and status code"""
-    parts = line.split()
-    if len(parts) < 9:
+    try:
+        parts = line.split()
+        if len(parts) < 9:
+            return None, None
+        return int(parts[-1]), parts[-2]
+    except Exception as e:
+        print(f"Error parsing line: {line}. Error: {e}")
         return None, None
-    return int(parts[-1]), parts[-2]
+
 
 def main():
     """Main entry point"""
     total_size = 0
-    status_counts = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+    status_counts = {200: 0, 301: 0, 400: 0, 401: 0,
+            403: 0, 404: 0, 405: 0, 500: 0}
     line_count = 0
 
     try:
@@ -35,6 +43,7 @@ def main():
                 print_metrics(total_size, status_counts)
     except KeyboardInterrupt:
         print_metrics(total_size, status_counts)
+
 
 if __name__ == "__main__":
     main()
