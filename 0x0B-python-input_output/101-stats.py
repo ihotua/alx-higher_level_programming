@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""0X0B. Python - Input/Output, task 14. Log parsing"""
+"""0X0B. Python - Input/Output, task 14. Log parsing"""
 
 
 import sys
