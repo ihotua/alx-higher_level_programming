@@ -10,8 +10,7 @@ def print_statistics(total_file_size, status_counts):
     print("Total file size:", total_file_size)
     for status_code, count in sorted(status_counts.items()):
         if count > 0:
-            print(f"Number of lines with 
-                    status code {status_code}: {count}")
+            print(f"Number of lines with status code {status_code}: {count}")
 
 def parse_log_line(line):
     """
