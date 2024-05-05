@@ -1,0 +1,19 @@
+# Testing add_integer function
+try:
+    result = add_integer(3, 5)
+    print("Result:", result)  # Output should be 8
+except TypeError as e:
+    print("TypeError:", e)
+
+try:
+    result = add_integer(3.5, 5)
+    print("Result:", result)  # Output should be 8
+except TypeError as e:
+    print("TypeError:", e)
+
+try:
+    result = add_integer(3, "5")
+    print("Result:", result)  # Output should raise TypeError
+except TypeError as e:
+    print("TypeError:", e)
+
