@@ -1,5 +1,6 @@
 #!/usr/bin/node
-/*Print three lines using array and loop*/
+/* Print three lines using array and loop
+ */
 
 const msgs = [
   'C is fun',
